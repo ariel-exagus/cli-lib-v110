@@ -14,6 +14,13 @@
 
 #define MAX_COMMANDS 10
 #define MAX_INPUT_LENGTH 64
+#define NEWLINE "\r\n"
+
+// Define messages
+#define UNKNOWN_CMD_MSG "--------------------------------------------\n"\
+                        "Unknown command. List of available commands:\n"
+
+#define END_CMD_MSG     "--------------------------------------------\n"
 
 // Tipo de función para comandos
 typedef void (*CommandFunction)(int argc, char *argv[]);
@@ -34,5 +41,6 @@ void CLI_RegisterCommand(const char *name, CommandFunction function, const char 
 //comandos
 void cmd_hello(int argc, char *argv[]);
 void cmd_echo(int argc, char *argv[]);
+void cmd_cli_version(int argc, char *argv[]);
 
 #endif /* INC_CLI_H_ */
